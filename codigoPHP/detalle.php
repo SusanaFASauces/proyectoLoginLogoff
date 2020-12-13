@@ -1,10 +1,24 @@
+<?php 
+    /**
+    * @author Susana Fabián Antón
+    * @since 23/11/2020
+    * @version 13/12/2020
+    */
+
+    session_start();
+    if(!isset($_SESSION[usuarioDAW208LoginLogoffTema5])) { //si el usuario no ha iniciado sesión
+        header('Location: login.php'); //enviamos al usuario de vuelta al login
+    }
+    else { //si ha iniciado sesión correctamente
+        if(!empty($_SESSION)) { //si la variable superglobal está definida 
+?>
 <!DOCTYPE html>
 <html>
     <head>
         <title>Susana Fabián Antón</title>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="webroot/css/estilo.css">
+        <link rel="stylesheet" type="text/css" href="../webroot/css/estilo.css">
     </head>
     <body>
         <header>
@@ -17,20 +31,6 @@
                     <header>
                         <h4>Variables superglobales</h4>
                     </header>
-                    <?php 
-                        /**
-                        * @author Susana Fabián Antón
-                        * @since 23/11/2020
-                        * @version 26/11/2020
-                        */
-                        
-                        session_start();
-                        if(!isset($_SESSION[usuarioDAW208LoginLogoffTema5])) { //si el usuario no ha iniciado sesión
-                            header('Location: login.php'); //enviamos al usuario de vuelta al login
-                        }
-                        else { //si ha iniciado sesión correctamente
-                            if(!empty($_SESSION)) { //si la variable superglobal está definida 
-                    ?>
                     <h5>$_SESSION</h5>
                     <table class="tabla margin">
                         <tr>
@@ -186,10 +186,10 @@
         </main>
         <footer>
             <div class="iconos-izq">
-                <a href="../proyectoDWES/indexProyectoDWES.html"><img src="../webroot/icons/volver.png" alt="volver"></a>
+                <a href="../../proyectoDWES/indexProyectoDWES.html"><img src="../webroot/icons/volver.png" alt="volver"></a>
             </div>
             <address>Contacta conmigo en: susana.fabant@educa.jcyl.es</address>
-            <p>- 1 de Diciembre 2020 -</p>
+            <p>- 13 de Diciembre 2020 -</p>
             <div class="iconos-dcha">
                 <a href="https://github.com/SusanaFASauces" target="_blank"><img src="../webroot/icons/github.png" alt="github"></a>
             </div>
